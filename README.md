@@ -1,5 +1,8 @@
 # Ansible Role: ansible-role-salt
-This role does XYZ. This is a boilerplate. Fill me out.
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-salt-blue.svg)](https://galaxy.ansible.com/pgporada/salt/)
+[![License](https://img.shields.io/badge/license-ISC-brightgreen.svg)](LICENSE)
+
+Installs and configures a salt minion/master.
 
 - - - -
 # Role Variables
@@ -21,26 +24,20 @@ This var does ABC
       become: true
       become_method: sudo
       roles:
+        - pgporada.repo-salt
         - ansible-role-salt
     ...
 
 - - - -
+# Hacking away at this project
 
 Lint all the yaml files with [yamllint](https://github.com/adrienverge/yamllint). Warnings are ok, fix all errors before committing back up.
 
-    
+Run your changes through a local test-kitchen setup.
 
-Set up test-kitchen dependencies
-
-    git clone git@github.com:DRrawlins/ansible-role-salt.git
+    git clone git@github.com:pgporada/ansible-role-salt.git
     bundle install
     bundle update
-
-Test-kitchen needs our bitbucket ssh key so it can pull code from Bitbucket on our behalf.
-
-    ssh-add -D
-    ssh-add -k ~/BITBUCKET_KEY_NAME
-    ssh-add -L
     bundle exec kitchen create
     bundle exec kitchen converge
     bundle exec kitchen verify
@@ -48,4 +45,11 @@ Test-kitchen needs our bitbucket ssh key so it can pull code from Bitbucket on o
 
 - - - -
 # Theme Music
-[The Slackers - Same Everyday](https://www.youtube.com/watch?v=Qy_2OqTvW34)
+[The Aggrolites - Faster Bullet](https://www.youtube.com/watch?v=GwQjzsB6TVM)
+
+- - - -
+# Author Information and License
+
+ISC
+
+[Phil Porada](https://github.com/pgporada) and [Dan Rawlins](https://github.com/drrawlins) 2016
